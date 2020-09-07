@@ -1,2 +1,9 @@
 <body></body>
 <script src="./gesture.js"></script>
+
+<script>
+    // 禁止事件默认行为
+    window.addEventListener("contextmenu", event => event.preventDefault());
+    document.addEventListener("select", event => event.preventDefault());
+    document.addEventListener("touchmove", event => event.preventDefault(), { passive: false })
+</script>
