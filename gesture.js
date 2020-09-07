@@ -1,4 +1,4 @@
-enableGesture(document.body);
+
 function enableGesture(element) {
 
     let contexts = Object.create(null);
