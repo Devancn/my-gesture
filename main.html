@@ -13,14 +13,13 @@
 
     let my = document.getElementById("my")
     enableGesture(my);
-    my.addEventListener("pan", event => {
-        console.log(x + event.clientX - event.startX);
-        console.log(y + event.clientY - event.startY);
-        my.style.transform = `translate(${x + event.clientX - event.startX}px, ${y + event.clientY - event.startY}px)`
+    my.addEventListener("pan", ({detail}) => {
+
+        my.style.transform = `translate(${x + detail.clientX - detail.startX}px, ${y + detail.clientY - detail.startY}px)`
     })
 
-    my.addEventListener("panend", event => {
-        x = (x + event.clientX - event.startX);
-        y = (y + event.clientY - event.startY);
+    my.addEventListener("panend", ({detail}) => {
+        x = (x + detail.clientX - detail.startX);
+        y = (y + detail.clientY - detail.startY);
     })
 </script>
